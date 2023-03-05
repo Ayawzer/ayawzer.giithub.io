@@ -40,6 +40,7 @@ main {
     text-align: center;
     align-items: center;
     justify-content: center;
+    max-height: 30rem;
 }
 
 .shadow {
@@ -78,6 +79,93 @@ main {
     padding: 0px 20% 15px 20%
 }
 
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.summary > h3 {
+    font-size: 20px;
+    margin: 0.8rem 2rem 0.8rem 2rem;
+}
+
+.summary_item_svg {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 1rem 0.75rem 1rem 0.75rem;
+    border-radius: 8px;
+    
+}
+
+.summary_item_svg > p > span {
+    opacity: 0.6;
+    
+}
+
+.summary_item_svg > div > svg {
+    padding-right: 0.6rem;
+}
+
+.summary_item_svg > div {
+    display: flex;
+}
+
+.summary_item { /*prawdopodobnie sie zmniejszy bo summary item to tez button albo nawet wyzeruje jak dodam background i wymiary
+    ew przejdzie tylko na button nie wiem jeszcze*/
+    margin: 0.4rem 2rem 0.4rem 2rem;
+}
+
+.summary > button {
+    border-radius: 2rem;
+    border: none;
+    padding: 0.75rem;
+    background: linear-gradient(180deg, hsl(252, 100%, 67%) 0%, hsl(241, 81%, 54%) 100%);
+    color: white;
+    font-size: 18px;
+    margin: 2rem
+}
+
+.summary > button:hover {
+    cursor: pointer;
+    background: hsl(225, 29.4%, 26.7%)
+}
+
+.reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    
+}
+
+.reaction > div {
+    color: hsl(0, 100%, 67%);
+}
+
+.memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.memory > div {
+     color: hsl(39, 100%, 56%);
+}
+
+.verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.verbal > div {
+    color: hsl(166, 100%, 37%);
+}
+
+.visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.visual > div {
+    color: hsl(234, 85%, 45%);
+}
+
 @media only screen and (max-width: 479px) {
     main {
         align-content: flex-start;
@@ -96,5 +184,9 @@ main {
 
     .result > p:nth-child(1)/*Your result*/ {
         padding-top: 15px;
+    }
+
+    .summary > h3 {
+        margin: 2rem;
     }
 }
