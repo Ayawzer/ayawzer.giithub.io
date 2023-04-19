@@ -1,0 +1,246 @@
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-gray-violet: hsl(270, 3%, 87%);
+    --dark-gray-violet: hsl(279, 6%, 55%);
+    --violet: hsl(278, 68%, 11%);
+}
+
+* {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif; 
+    box-sizing: border-box;
+}
+
+.main {
+    display: grid;
+    min-height: 100svh;
+    place-items: center;
+    
+}
+
+p { /* text style */
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+input { /* inputs style */
+    height: 2.5rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 0 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+input::placeholder {
+    opacity: 0.6;
+    font-size: 18px;
+}
+
+input:focus {
+    border-color: hsl(271, 100%, 30%);
+  }
+
+.error input {
+     border-color: red;
+}
+
+.fancy { /* left side */
+    background-image: url(./interactive-card-details-form-main/images/bg-main-mobile.png);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.plain { /* centering content on the right side */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info { /* so the inputs apper in columns */
+    display: flex;
+    flex-direction: column;
+    margin: 45px
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item1, .item2 { /* inputs take whole avaliable space */
+    display: flex;
+    flex-direction: column;
+}
+
+.item1 > input, .item2 >input { /* so it doesnt overflow on smaller screens */
+    width: calc(100%);
+}
+
+.item3-4 { /* so the inputs for month and year apper next to eachother rather than under */
+    display: flex;
+    gap: 10px;
+}
+
+.item3, .item4 { /* so item 3 and 4 have the same width */
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.item4 input { /* doeasnt overflow on smaller screens */
+    width:calc(100%)
+}
+
+.exp-date-inputs { 
+    margin-bottom: 10px;
+}
+
+.item4 > input {
+    margin-bottom: 10px;
+}
+
+.exp-date-inputs input{
+    width: calc(45%);
+}
+
+button {
+    border: none;
+    color: var(--white);
+    background-color: var(--violet);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 13px 6px;
+    font-size: 18px;
+    transition: 0.35s ease-in-out;
+
+}
+
+button:hover {
+    background-color: hsl(271, 100%, 30%);
+}
+
+/* Styles for front card and back card imgs */
+.back-card {
+    background-image: url(./interactive-card-details-form-main/images/bg-card-back.png);
+    min-width: 220px;
+    min-height: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-position: right; 
+    z-index: 1;
+}
+
+.back-card > p {
+    position: relative;
+    top: 52px;
+    right: 25px;    
+    text-align: right;
+    color: white;
+    font-size: 10px;
+}
+
+.front-card {
+    background-image: url(./interactive-card-details-form-main/images/bg-card-front.png);
+    min-width: 220px;
+    min-height: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    background-position: left;
+    top: 100px;
+    left: 40px;
+    z-index: 2;
+}
+
+.front-card > img {
+    width: 3rem;
+    margin: 15px 0 0 15px;
+}
+
+.front-card > h3 {
+    color: var(--white);
+    margin: 20px 5px 10px 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-cred > p {
+    color: var(--white);
+    font-size: 10px;
+    
+}
+
+.card-cred  {
+    display: flex;
+    justify-content: space-around;
+}
+
+.error > span {
+    color: red;
+    font-size: 12px;
+    
+  }
+
+/* Media for tablets+ */
+@media screen and (min-width: 769px) {
+    .main {
+        grid-template-columns: 30% 70%;
+    }
+    .fancy {
+        background-image: url(./interactive-card-details-form-main/images/bg-main-desktop.png);
+        
+    }
+    .front-card {
+        top: 200px;
+        left: 25px;
+    }
+    .back-card {
+        left: 50px;
+        right: inherit;
+        top: 350px;
+    }
+}
+
+/* Media for laptops + */
+@media screen and (min-width: 1024px) {
+    .front-card {
+        min-width: 300px;
+        min-height: 180px;
+        top: 150px;
+    }
+    .back-card {
+        min-width: 300px;
+        min-height: 180px;
+        left: 45px;
+    }
+    .front-card > img {
+        width: 4rem;
+        margin: 23px 0 0 15px;
+    }
+    .front-card > h3 {
+        margin: 25px 5px 25px 5px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .back-card > p {
+        top: 80px;
+        right: 33px;    
+        font-size: 12px;
+    }
+}

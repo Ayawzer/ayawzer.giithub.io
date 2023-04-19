@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./interactive-card-details-form-main/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <div class="main">
+    <div class="front-card">
+        <img src="./interactive-card-details-form-main/images/card-logo.svg" alt="card-logo">
+        <h3 id="CardNumber">0000 0000 0000 0000</h3>
+        <div class="card-cred">
+          <p id="CardName">Jane Appleseed</p>
+          <p>
+            <span id="CardMonth">00</span>/<span id="CardYear">00</span>
+          </p>
+        </div>
+      </div>
+      <div class="back-card">
+        <p id="CardCvc">000</p>
+      </div>
+    <div class="fancy"></div>
+    <div class="plain">
+      <form class="info" action="#" method="GET">
+        <div class="item item1">
+          <p>cardholder name</p>
+          <input id="Name" type="text" placeholder="e.g. Jane Appleseed" required>
+          <span class="error"></span>
+        </div>
+        <p>card nubmer</p>
+        <div class="item item2">
+          
+          <input id="Number" type="text" placeholder="e.g. 1234 5678 9123 0000" required>
+          <span class="error"></span>
+        </div>
+        <div class="item item3-4">
+          <div class="item3">
+            <p>exp. date</p>
+            <div class="exp-date-inputs">
+              <input id="Month" type="text" placeholder="MM" required>
+              <input id="Year" type="text" placeholder="YY" required>
+               <span class="error"></span>
+            </div>
+           
+          </div>
+          <div class="item4">
+            <p>cvc</p>
+            <input id="Cvc" type="number" placeholder="123" required>
+            <span class="error"></span>
+          </div>
+        </div>
+          <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
