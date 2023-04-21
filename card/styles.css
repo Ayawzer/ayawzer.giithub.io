@@ -74,6 +74,11 @@ input:focus {
     margin: 45px
 }
 
+.info-completed { /* styling for completed page */
+    display: flex;
+    flex-direction: column;
+}
+
 .item {
     margin-bottom: 20px;
 }
@@ -114,7 +119,7 @@ input:focus {
     width: calc(45%);
 }
 
-button {
+.button {
     border: none;
     color: var(--white);
     background-color: var(--violet);
@@ -126,7 +131,24 @@ button {
 
 }
 
-button:hover {
+.button-completed { /* for button on completed site */
+    border: none;
+    color: var(--white);
+    background-color: var(--violet);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 13px 6px;
+    font-size: 18px;
+    transition: 0.35s ease-in-out;
+    margin-top: 30px;
+    width: clamp(10rem, 15rem, 20rem);
+}
+
+.button:hover {
+    background-color: hsl(271, 100%, 30%);
+}
+
+.button-completed:hover {
     background-color: hsl(271, 100%, 30%);
 }
 
@@ -195,6 +217,15 @@ button:hover {
     font-size: 12px;
     
   }
+
+.text-completed { /* for text elements on completed site */
+    margin: 10px;
+}
+
+.img-completed { /* for completed icon */
+    margin-bottom: 20px;
+}
+
 
 /* Media for tablets+ */
 @media screen and (min-width: 769px) {

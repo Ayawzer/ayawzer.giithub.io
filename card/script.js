@@ -16,7 +16,7 @@ const outputElements = [
 ];
 
 //Error user left empty space
-function showError(inputElement, parentElement, outputElement) {
+function showError(inputElement, parentElement) {
   const errorElement = parentElement.querySelector(".error");
   errorElement.textContent = `Can't be empty`;
   parentElement.classList.add("error");
@@ -174,3 +174,44 @@ function allowAlphabetsOnly(inputElement) {
 const cardNameInput = document.getElementById("Name");
 allowAlphabetsOnly(cardNameInput);
  
+
+// Chaning elements after the submit
+const form = document.querySelector('.info');
+const plain = document.querySelector('.plain');
+const main = document.querySelector('.main');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  // create new content for the 'plain' div
+  const checkimg = document.createElement('img');
+  checkimg.classList.add('img-completed');
+  checkimg.src = './interactive-card-details-form-main/images/icon-complete.svg';
+  checkimg.alt = 'completed icon';
+
+  const thanksMessage = document.createElement('h3');
+  thanksMessage.classList.add('text-completed');
+  thanksMessage.textContent = "THANK YOU !";
+
+  const successMessage = document.createElement('p');
+  successMessage.classList.add('text-completed');
+  successMessage.textContent = "We've added your card details";
+
+  const button = document.createElement('button');
+  button.textContent = 'Back to form';
+  button.classList.add('button-completed');
+  button.addEventListener('click', () => {
+    // reset the form and show the form fields again
+    form.reset();
+    plain.innerHTML = '';
+    plain.appendChild(form);
+  });
+
+  // update the content of the 'plain' div
+  plain.innerHTML = '';
+  plain.classList.add('info-completed');
+  plain.appendChild(checkimg);
+  plain.appendChild(thanksMessage);
+  plain.appendChild(successMessage);
+  plain.appendChild(button);
+  
+});
